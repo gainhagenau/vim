@@ -3,17 +3,17 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " USER INTERFACE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype plugin on " Filetype auto-detection
-filetype indent on
-syntax on " Syntax highlighting
+filetype plugin on    " File type auto-detection
+filetype indent on    " File type specific indentation enabled
+syntax on             " Syntax highlighting
 
 set number            " turns on line numbers
 set relativenumber    " All line numbers but the current line will be relative
 set cmdheight=2       " Height of the command bar becomes 2 lines
 
 set background=dark   " set background
-" To see all installed colorschemes: <leader>colorscheme (space) (tab)
-colorscheme default     " default color scheme
+" To see all installed colorschemes => :colorscheme (space) (tab)
+colorscheme default   " use default color scheme
 " default comments are too dark and hard to read
 highlight Comment ctermfg=blue
 highlight Normal ctermfg=White
@@ -24,6 +24,8 @@ highlight  LineNr   term=bold ctermfg=Grey gui=bold guifg=Grey
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GENERAL KEY REMAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader=","
+" jj is much faster than esc 
 imap jj <esc>"            jj goes to normal mode from insert mode
 " Note that remapping C-s requires flow control to be disabled
 " (add 'stty ixany' & 'stty ixoff -ixon' to .bashrc)
@@ -43,7 +45,7 @@ set expandtab         " use spaces instead of tabs.
 set smarttab          " let's tab key insert 'tab stops', and bksp deletes tabs.
 set shiftround        " tab / shifting moves to closest tabstop.
 set autoindent        " Match indents on new lines.
-set smartindent       " Intellegently dedent / indent new lines based on rules.
+set smartindent       " Intelligently dedent / indent new lines based on rules.
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SEARCH
@@ -53,7 +55,7 @@ set smartcase         " If there are uppercase letters, become case-sensitive.
 set incsearch         " live incremental searching
 set showmatch         " live match highlighting
 set hlsearch          " highlight matches
-set gdefault          " use the `g` flag by default. Making operations apply globably
+set gdefault          " use the 'g' flag by default. Making operations apply globally
 
 " allow the cursor to go anywhere in visual block mode.
 set virtualedit+=block
@@ -77,7 +79,7 @@ map <C-c> <C-w>s
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FILES / UNDO
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Makes changes persistant once the file has been closed
+" Makes changes persistent once the file has been closed
 " NOTE: this dir must exist for it to work
 try
     set undodir=~/.vim/undodir
@@ -106,7 +108,6 @@ set novisualbell
 set t_vb=
 set tm=500
 
-
-
-
+" Pressing ,ss will toggle and untoggle spell checking
+map <leader>ss :setlocal spell!<cr>
 
