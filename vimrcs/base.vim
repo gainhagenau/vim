@@ -58,8 +58,8 @@ set gdefault          " use the `g` flag by default. Making operations apply glo
 " allow the cursor to go anywhere in visual block mode.
 set virtualedit+=block
 
-" Ctrl + h --> no highlight
-map <C-h> :noh<cr>
+" double slash --> no highlight
+map // :noh<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " WINDOWS
