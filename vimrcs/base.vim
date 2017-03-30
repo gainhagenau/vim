@@ -29,12 +29,11 @@ let mapleader=","
 imap jj <esc>"            jj goes to normal mode from insert mode
 " Note that remapping C-s requires flow control to be disabled
 " (add 'stty ixany' & 'stty ixoff -ixon' to .bashrc)
-map <C-s> <esc>:w<cr>     " Ctrl + s --> saves file
-imap <C-s> <esc>:w<cr>    " Ctrl + s --> saves file
-map <C-d> <esc>:q<cr>     " Ctrl + d --> exits
-imap <C-d> <esc>:q<cr>    " Ctrl + d --> exits
-map <C-S-d> <esc>:q!<cr>  " Ctrl + Shift + d --> force exit
-imap <C-S-d> <esc>:q!<cr> " Ctrl + Shift + d --> force exit
+map <C-s> <esc>:w<cr>                " Ctrl + s --> saves file
+imap <C-s> <esc>:w<cr>               " Ctrl + s --> saves file
+map <C-d> <esc>:q<cr>                " Ctrl + d --> exits
+imap <C-d> <esc>:q<cr>               " Ctrl + d --> exits
+map <leader><C-d> <esc>:q!<cr>       " , then Ctrl + d --> force exit
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " INDENTATION / TABS
@@ -73,8 +72,9 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Short cut for creating windows
-map <C-v> <C-w>v
-map <C-c> <C-w>s
+" v - vertical, h - horizontal
+map <leader>v <C-w>v
+map <leader>h <C-w>s
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FILES / UNDO
@@ -109,5 +109,5 @@ set t_vb=
 set tm=500
 
 " Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+map <leader>s :setlocal spell!<cr>
 
