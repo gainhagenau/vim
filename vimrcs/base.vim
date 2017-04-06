@@ -1,4 +1,7 @@
-" This is a base vimrc that will work with no plugins.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGIN
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+source ~/vim/plugins/pathogen/pathogen.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " USER INTERFACE
@@ -33,7 +36,22 @@ map <C-s> <esc>:w<cr>                " Ctrl + s --> saves file
 imap <C-s> <esc>:w<cr>               " Ctrl + s --> saves file
 map <C-d> <esc>:q<cr>                " Ctrl + d --> exits
 imap <C-d> <esc>:q<cr>               " Ctrl + d --> exits
-map <leader><C-d> <esc>:q!<cr>       " , then Ctrl + d --> force exit
+map <leader><C-d> <esc>:q!<cr>       " , + Ctrl + d --> force exit
+
+" Pressing ,ss will toggle and untoggle spell checking
+map <leader>s :setlocal spell!<cr>
+ 
+" ,p will replace the current word with what is in the default register
+noremap <leader>p "_dawhp
+
+" Search for current word shortcut (sacrifices jumping to letter f in line)
+" lb puts cursor at the start of the word so ye selects only the word
+noremap ff lb"aye/<C-r>a<cr>N
+" Search and replace current word shortcut (sacrifices jumping to letter r in line)
+noremap fr lb"aye:%s/<C-r>a/
+
+" Delete line but to not copy.
+noremap DD "_dd
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " INDENTATION / TABS
@@ -108,6 +126,16 @@ set novisualbell
 set t_vb=
 set tm=500
 
-" Pressing ,ss will toggle and untoggle spell checking
-map <leader>s :setlocal spell!<cr>
+" Delete trailing white space
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+" Uncomment to have it clean on save for given file types
+" autocmd BufWrite *.py :call DeleteTrailingWS()
+" autocmd BufWrite *.yml :call DeleteTrailingWS()
 
+
+
+         
