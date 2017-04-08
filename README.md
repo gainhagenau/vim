@@ -1,6 +1,21 @@
 # My vim configuration 
 
-This is my vim configuration. I used "[The Ultimate vimrc](https://github.com/amix/vimrc)" as insperation but wanted to add things incrementally as I used vim more so I knew how it all worked.  
+This is my vim configuration. Inspired by "[The Ultimate vimrc](https://github.com/amix/vimrc)".
+
+# Installation
+
+```bash
+cd ~
+git clone https://github.com/gainhagenau/vim
+```
+To install without plugins:
+```bash
+bash vim/install_basic.sh
+```
+Install everything:
+```bash
+bash vim/install_full.sh
+```
 
 
 

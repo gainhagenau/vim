@@ -1,8 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PLUGIN
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source ~/vim/plugins/pathogen/pathogen.vim
-
+" Author: Gain Hagenau
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " USER INTERFACE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -119,6 +115,9 @@ set pastetoggle=<F1>
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
+
+" Make backspace work correctly
+set backspace=indent,eol,start
 
 " No annoying sound on errors
 set noerrorbells
