@@ -10,6 +10,8 @@ set number            " turns on line numbers
 set relativenumber    " All line numbers but the current line will be relative
 set cmdheight=2       " Height of the command bar becomes 2 lines
 
+set nowrap
+
 set background=dark   " set background
 " To see all installed colorschemes => :colorscheme (space) (tab)
 colorscheme default   " use default color scheme
@@ -24,15 +26,18 @@ highlight  LineNr   term=bold ctermfg=Grey gui=bold guifg=Grey
 " GENERAL KEY REMAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=","
-" jj is much faster than esc 
-imap jj <esc>"            jj goes to normal mode from insert mode
+" jj escapes to normal mode and is much faster than esc 
+imap jj <esc>
 " Note that remapping C-s requires flow control to be disabled
 " (add 'stty ixany' & 'stty ixoff -ixon' to .bashrc)
-map <C-s> <esc>:w<cr>                " Ctrl + s --> saves file
-imap <C-s> <esc>:w<cr>               " Ctrl + s --> saves file
-map <C-d> <esc>:q<cr>                " Ctrl + d --> exits
-imap <C-d> <esc>:q<cr>               " Ctrl + d --> exits
-map <leader><C-d> <esc>:q!<cr>       " , + Ctrl + d --> force exit
+" Ctrl + s --> saves file
+map <C-s> <esc>:w<cr>
+imap <C-s> <esc>:w<cr>
+" Ctrl + d --> exits
+map <C-d> <esc>:q<cr>
+imap <C-d> <esc>:q<cr>
+" , + Ctrl + d --> force exit
+map <leader><C-d> <esc>:q!<cr>
 
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>s :setlocal spell!<cr>
@@ -135,6 +140,5 @@ endfunc
 " autocmd BufWrite *.py :call DeleteTrailingWS()
 " autocmd BufWrite *.yml :call DeleteTrailingWS()
 
-
-
-         
+" :Help will open help vertically (default :help opens horizontal split)
+command -nargs=* -complete=help Help vertical belowright help <args>

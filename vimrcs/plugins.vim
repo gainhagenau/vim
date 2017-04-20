@@ -19,9 +19,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
+" Github plugin
 Plugin 'tpope/vim-fugitive'
-
+" status bar plugin
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -40,4 +42,10 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGIN SPECIFIC CONFIG
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" AIRLINE
+set laststatus=2                        " Make airline appear by default
+set noshowmode                          " disable the default mode indicator i.e. -- INSERT --
+let g:airline_theme='term'              " set theme that does not require powerline fonts
+let g:airline_detect_modified=0         " If on colors change if there are unwritten changes
 
