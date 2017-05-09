@@ -39,6 +39,11 @@ imap <C-d> <esc>:q<cr>
 " , + Ctrl + d --> force exit
 map <leader><C-d> <esc>:q!<cr>
 
+" Toggle paste mode when in insert mode using F1
+set pastetoggle=<F1>
+" Toggle line numbers on and off in normal mode using F2
+nnoremap <F2> :set number! relativenumber!<cr>
+
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>s :setlocal spell!<cr>
  
@@ -82,7 +87,7 @@ set virtualedit+=block
 map // :noh<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" WINDOWS
+" WINDOWS / TAB PAGES
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Smart way to move between windows
 map <C-j> <C-W>j
@@ -94,6 +99,10 @@ map <C-l> <C-W>l
 " v - vertical, h - horizontal
 map <leader>v <C-w>v
 map <leader>h <C-w>s
+
+" more standard controls for moving between tabs
+map <Tab> :tabn<cr>
+map <S-Tab> :tabp<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FILES / UNDO
@@ -114,8 +123,6 @@ set noswapfile
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Toggle paste mode
-set pastetoggle=<F1>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)

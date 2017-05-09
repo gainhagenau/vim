@@ -24,6 +24,10 @@ Plugin 'tpope/vim-fugitive'
 " status bar plugin
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -39,13 +43,45 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PLUGIN SPECIFIC CONFIG
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AIRLINE
-set laststatus=2                        " Make airline appear by default
-set noshowmode                          " disable the default mode indicator i.e. -- INSERT --
-let g:airline_theme='term'              " set theme that does not require powerline fonts
-let g:airline_detect_modified=0         " If on colors change if there are unwritten changes
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set laststatus=2                                        " Make airline appear by default
+set noshowmode                                          " disable the default mode indicator i.e. -- INSERT --
+let g:airline_theme='term'                              " set theme that does not require powerline fonts
+let g:airline_detect_modified=0                         " If on colors change if there are unwritten changes
+let g:airline#extensions#tabline#show_buffers = 0       " Corrects tab line for closed but not deleted buffers
+let g:airline#extensions#tabline#fnamemod = ':t'        " Dont show path in tab name, just file name
+let g:airline#extensions#tabline#enabled = 1            " turn on airline tabs
+let g:airline#extensions#tabline#left_sep = '|'         " characters seperating selected tab
+let g:airline#extensions#tabline#left_alt_sep = '-'     " characters seperating the non-selected tabs
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FUGITIVE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set diffopt+=vertical
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" if no file is opened, then open NERDTree
+let g:nerdtree_tabs_open_on_console_startup=1
+
+" map crtl-n to open/close NERDTree in all tabs (NERDTree-tabs)
+map <C-n> :NERDTreeTabsToggle<CR>
+
+" closes buffer if NERDTree is the only thing open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" set the expand/collapse arrows 
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '~'
+
+" Change the default colors
+highlight Directory ctermfg=blue
+highlight NERDTreeOpenable ctermfg=green
+highlight NERDTreeClosable ctermfg=lightred
+
+" ignore irrelevant files
+let NERDTreeIgnore = ['\.pyc$']
