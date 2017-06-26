@@ -56,8 +56,18 @@ noremap ff lb"aye/<C-r>a<cr>N
 " Search and replace current word shortcut (sacrifices jumping to letter r in line)
 noremap fr lb"aye:%s/<C-r>a/
 
+" Search for highlighted text from visual mode
+vnoremap ff "ay/<C-r>a<cr>N
+
 " Delete line but to not copy.
 noremap DD "_dd
+
+" Map page up/down to K/J respectively and place cursor in the middle 
+" This results in the loss of:
+"       - K: look of man file for the word the cursor is currently on
+"       - J: Append the line bellow to the end of the current line
+noremap K <C-b>M
+noremap J <C-f>M
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " INDENTATION / TABS
