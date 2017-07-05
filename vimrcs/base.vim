@@ -62,12 +62,12 @@ vnoremap ff "ay/<C-r>a<cr>N
 " Delete line but to not copy.
 noremap DD "_dd
 
-" Map page up/down to K/J respectively and place cursor in the middle 
+" Map K/J to jump a half page up and down respectivly respectively and place cursor in the middle 
 " This results in the loss of:
 "       - K: look of man file for the word the cursor is currently on
 "       - J: Append the line bellow to the end of the current line
-noremap K <C-b>M
-noremap J <C-f>M
+noremap K Hzz 
+noremap J Lzz
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " INDENTATION / TABS

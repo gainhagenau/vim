@@ -28,6 +28,9 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 
+" Additional custom plugins (optional)
+source ~/vim/vimrcs/additional_plugins.vim
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
