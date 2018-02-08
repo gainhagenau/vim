@@ -21,6 +21,9 @@ highlight Normal ctermfg=White
 " Line number coloring
 highlight CursorLineNr   term=bold ctermfg=Green gui=bold guifg=Green
 highlight  LineNr   term=bold ctermfg=Grey gui=bold guifg=Grey
+" Set highlight coloring
+highlight Search ctermfg=Black
+highlight Search ctermbg=Yellow
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GENERAL KEY REMAPPINGS
