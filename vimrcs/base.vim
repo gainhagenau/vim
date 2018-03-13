@@ -9,6 +9,7 @@ syntax on             " Syntax highlighting
 set number            " turns on line numbers
 set relativenumber    " All line numbers but the current line will be relative
 set cmdheight=2       " Height of the command bar becomes 2 lines
+set scrolloff=5       " cursor offset from the from the bottom/top of screen
 
 set nowrap
 
@@ -31,9 +32,21 @@ highlight Search ctermbg=Yellow
 let mapleader=","
 " jj escapes to normal mode and is much faster than esc 
 imap jj <esc>
+" Toggle paste mode when in insert mode using F1
+set pastetoggle=<F1>
+" Toggle line numbers on and off in normal mode using F2
+nnoremap <F2> :set number! relativenumber!<cr>
+" Pressing ,ss will toggle and untoggle spell checking
+map <leader>s :setlocal spell!<cr>
+" ,p will replace the current word with what is in the default register
+noremap <leader>p "_dawhp
+" Delete line but to not copy.
+noremap DD "_dd
+
+" **** SAVING / EXITING ****
+" Ctrl + s --> saves file
 " Note that remapping C-s requires flow control to be disabled
 " (add 'stty ixany' & 'stty ixoff -ixon' to .bashrc)
-" Ctrl + s --> saves file
 map <C-s> <esc>:w<cr>
 imap <C-s> <esc>:w<cr>
 " Ctrl + d --> exits
@@ -42,29 +55,7 @@ imap <C-d> <esc>:q<cr>
 " , + Ctrl + d --> force exit
 map <leader><C-d> <esc>:q!<cr>
 
-" Toggle paste mode when in insert mode using F1
-set pastetoggle=<F1>
-" Toggle line numbers on and off in normal mode using F2
-nnoremap <F2> :set number! relativenumber!<cr>
-
-" Pressing ,ss will toggle and untoggle spell checking
-map <leader>s :setlocal spell!<cr>
- 
-" ,p will replace the current word with what is in the default register
-noremap <leader>p "_dawhp
-
-" Search for current word shortcut (sacrifices jumping to letter f in line)
-" lb puts cursor at the start of the word so ye selects only the word
-noremap ff lb"aye/<C-r>a<cr>N
-" Search and replace current word shortcut (sacrifices jumping to letter r in line)
-noremap fr lb"aye:%s/<C-r>a/
-
-" Search for highlighted text from visual mode
-vnoremap ff "ay/<C-r>a<cr>N
-
-" Delete line but to not copy.
-noremap DD "_dd
-
+" **** CURSOR / SCREEN MOVEMENT ****
 " Map K/J to jump a half page up and down respectivly respectively and place cursor in the middle 
 " This results in the loss of:
 "       - K: look of man file for the word the cursor is currently on
@@ -98,6 +89,16 @@ set virtualedit+=block
 
 " double slash --> no highlight
 map // :noh<cr>
+
+" Search for current word shortcut (sacrifices jumping to letter f in line)
+" lb puts cursor at the start of the word so ye selects only the word
+noremap ff lb"aye/<C-r>a<cr>N
+
+" Search and replace current word shortcut (sacrifices jumping to letter r in line)
+noremap fr lb"aye:%s/<C-r>a/
+
+" Search for highlighted text from visual mode
+vnoremap ff "ay/<C-r>a<cr>N
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " WINDOWS / TAB PAGES
