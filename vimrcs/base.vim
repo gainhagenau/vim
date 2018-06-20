@@ -32,6 +32,8 @@ highlight Search ctermbg=Yellow
 let mapleader=","
 " jj escapes to normal mode and is much faster than esc 
 imap jj <esc>
+vmap jj <esc>  
+
 " Toggle paste mode when in insert mode using F1
 set pastetoggle=<F1>
 " Toggle line numbers on and off in normal mode using F2
@@ -90,15 +92,15 @@ set virtualedit+=block
 " double slash --> no highlight
 map // :noh<cr>
 
-" Search for current word shortcut (sacrifices jumping to letter f in line)
-" lb puts cursor at the start of the word so ye selects only the word
-noremap ff lb"aye/<C-r>a<cr>N
+" When searching a word do not move to next occurrence 
+noremap * *N
 
-" Search and replace current word shortcut (sacrifices jumping to letter r in line)
-noremap fr lb"aye:%s/<C-r>a/
+" Simple find and replace for the current word
+noremap *r *N:%s/<C-r>//
+noremap *R *N:%s/<C-r>//
 
-" Search for highlighted text from visual mode
-vnoremap ff "ay/<C-r>a<cr>N
+" Add * search functionality to visual mode using register 9
+vnoremap * "9y/\V<C-r>9<cr>N
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " WINDOWS / TAB PAGES
