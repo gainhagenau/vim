@@ -13,6 +13,7 @@ set scrolloff=5       " cursor offset from the from the bottom/top of screen
 
 set nowrap
 
+" Modify the default color scheme to be used if not overwritten by a plugin
 set background=dark   " set background
 " To see all installed colorschemes => :colorscheme (space) (tab)
 colorscheme default   " use default color scheme

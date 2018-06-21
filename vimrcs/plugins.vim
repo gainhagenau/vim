@@ -19,14 +19,17 @@ Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
+
 " Github plugin
 Plugin 'tpope/vim-fugitive'
 " status bar plugin
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
+" File manager
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
+" Color Scheme
+Plugin 'morhetz/gruvbox'
 
 " Additional custom plugins (optional)
 source ~/vim/vimrcs/additional_plugins.vim
@@ -88,3 +91,20 @@ highlight NERDTreeClosable ctermfg=lightred
 
 " ignore irrelevant files
 let NERDTreeIgnore = ['\.pyc$']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GruvBox
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" https://github.com/morhetz/gruvbox/wiki/Configuration
+" Set GruvBox as color scheme (dark mode)
+set background=dark " Setting dark mode
+
+let g:gruvbox_termcolors = '256'
+let g:gruvbox_invert_tabline = '0'
+let g:gruvbox_contrast_dark = 'hard' "soft, medium, hard
+let g:gruvbox_contrast_light = 'medium' "soft, medium, hard
+" Colors valid values are from gruvbox palette
+let g:gruvbox_hls_cursor = 'orange'
+let g:gruvbox_number_column = 'bg1'
+
+colorscheme gruvbox
