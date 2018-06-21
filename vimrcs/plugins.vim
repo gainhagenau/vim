@@ -22,14 +22,20 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Github plugin
 Plugin 'tpope/vim-fugitive'
+
 " status bar plugin
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
 " File manager
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
+
 " Color Scheme
 Plugin 'morhetz/gruvbox'
+
+" Syntax 
+Plugin 'sheerun/vim-polyglot'
 
 " Additional custom plugins (optional)
 source ~/vim/vimrcs/additional_plugins.vim
@@ -47,8 +53,6 @@ filetype plugin indent on    " required
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AIRLINE
@@ -105,6 +109,13 @@ let g:gruvbox_contrast_dark = 'hard' "soft, medium, hard
 let g:gruvbox_contrast_light = 'medium' "soft, medium, hard
 " Colors valid values are from gruvbox palette
 let g:gruvbox_hls_cursor = 'orange'
-let g:gruvbox_number_column = 'bg1'
+let g:gruvbox_number_column = 'bg0'
 
 colorscheme gruvbox
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Polygot
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" https://github.com/sheerun/vim-polyglot
+" disable syntax for the following files:
+let g:polyglot_disabled = []
