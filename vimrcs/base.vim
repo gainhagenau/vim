@@ -33,7 +33,6 @@ highlight Search ctermbg=Yellow
 let mapleader=","
 " jj escapes to normal mode and is much faster than esc 
 imap jj <esc>
-vmap jj <esc>  
 
 " Toggle paste mode when in insert mode using F1
 set pastetoggle=<F1>
