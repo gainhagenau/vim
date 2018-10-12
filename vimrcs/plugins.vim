@@ -119,3 +119,6 @@ colorscheme gruvbox
 " https://github.com/sheerun/vim-polyglot
 " disable syntax for the following files:
 let g:polyglot_disabled = []
+
+" for html files, 2 spaces
+autocmd Filetype html setlocal ts=2 sw=2 expandtab

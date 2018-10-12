@@ -4,4 +4,4 @@
 " each deployment and can be placed here to avoid conflicts. 
 
 
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'

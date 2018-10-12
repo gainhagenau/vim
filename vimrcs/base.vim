@@ -165,3 +165,6 @@ endfunc
 
 " :Help will open help vertically (default :help opens horizontal split)
 command -nargs=* -complete=help Help vertical belowright help <args>
+
+" cat the current open file so that it can be copied
+command Cat !cat "%"
